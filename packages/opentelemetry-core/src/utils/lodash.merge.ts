@@ -16,6 +16,8 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { FunctionType } from '../common/types';
+
 /**
  * based on lodash in order to support esm builds without esModuleInterop.
  * lodash is using MIT License.
@@ -41,7 +43,7 @@ const nativeObjectToString = objectProto.toString;
  * @param {Function} transform The argument transform.
  * @returns {Function} Returns the new function.
  */
-function overArg(func: Function, transform: any): any {
+function overArg(func: FunctionType, transform: any): any {
   return function (arg: any) {
     return func(transform(arg));
   };

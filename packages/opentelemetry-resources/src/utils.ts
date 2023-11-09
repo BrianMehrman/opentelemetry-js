@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export const isPromiseLike = <R>(val: any): val is PromiseLike<R> => {
   return (
     val !== null && typeof val === 'object' && typeof val.then === 'function'

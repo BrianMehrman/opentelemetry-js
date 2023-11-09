@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { EventEmitter } from 'events';
 import type { Span, SpanStatus } from '@opentelemetry/api';
 import type { Client, Metadata, ServiceError } from '@grpc/grpc-js';

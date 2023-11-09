@@ -28,7 +28,7 @@ import {
 export class TraceIdRatioBasedSampler implements Sampler {
   private _upperBound: number;
 
-  constructor(private readonly _ratio: number = 0) {
+  constructor(private readonly _ratio = 0) {
     this._ratio = this._normalize(_ratio);
     this._upperBound = Math.floor(this._ratio * 0xffffffff);
   }

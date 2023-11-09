@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { diag } from '@opentelemetry/api';
 import {
   Detector,

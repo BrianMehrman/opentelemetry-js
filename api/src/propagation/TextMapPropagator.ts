@@ -16,6 +16,7 @@
 
 import { Context } from '../context/types';
 
+export type CarrierObject = { [key: string]: undefined | string | string[] };
 /**
  * Injects `Context` into and extracts it from carriers that travel
  * in-band across process boundaries. Encoding is expected to conform to the
@@ -27,7 +28,7 @@ import { Context } from '../context/types';
  * usually implemented via library-specific request interceptors, where the
  * client-side injects values and the server-side extracts them.
  */
-export interface TextMapPropagator<Carrier = any> {
+export interface TextMapPropagator<Carrier = CarrierObject> {
   /**
    * Injects values from a given `Context` into a carrier.
    *
@@ -75,7 +76,7 @@ export interface TextMapPropagator<Carrier = any> {
  * A setter is specified by the caller to define a specific method
  * to set key/value pairs on the carrier within a propagator.
  */
-export interface TextMapSetter<Carrier = any> {
+export interface TextMapSetter<Carrier = CarrierObject> {
   /**
    * Callback used to set a key/value pair on an object.
    *
@@ -93,7 +94,7 @@ export interface TextMapSetter<Carrier = any> {
  * A getter is specified by the caller to define a specific method
  * to get the value of a key from a carrier.
  */
-export interface TextMapGetter<Carrier = any> {
+export interface TextMapGetter<Carrier = CarrierObject> {
   /**
    * Get a list of all keys available on the carrier.
    *
@@ -111,14 +112,14 @@ export interface TextMapGetter<Carrier = any> {
 }
 
 export const defaultTextMapGetter: TextMapGetter = {
-  get(carrier, key) {
+  get(carrier: CarrierObject, key: string) {
     if (carrier == null) {
       return undefined;
     }
     return carrier[key];
   },
 
-  keys(carrier) {
+  keys(carrier: object) {
     if (carrier == null) {
       return [];
     }
@@ -127,7 +128,7 @@ export const defaultTextMapGetter: TextMapGetter = {
 };
 
 export const defaultTextMapSetter: TextMapSetter = {
-  set(carrier, key, value) {
+  set(carrier: CarrierObject, key: string, value) {
     if (carrier == null) {
       return;
     }

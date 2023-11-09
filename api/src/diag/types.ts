@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-export type DiagLogFunction = (message: string, ...args: unknown[]) => void;
+export type DiagLogFunction = (message: string, ...args: string[]) => void;
 
 /**
  * Defines an internal diagnostic logger interface which is used to log internal diagnostic

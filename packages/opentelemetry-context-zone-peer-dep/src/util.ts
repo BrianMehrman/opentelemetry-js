@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * check if an object has addEventListener and removeEventListener functions then it will return true.
  * Generally only called with a `TargetWithEvents` but may be called with an unknown / any.

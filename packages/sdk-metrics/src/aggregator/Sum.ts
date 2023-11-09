@@ -34,7 +34,7 @@ export class SumAccumulation implements Accumulation {
   constructor(
     public startTime: HrTime,
     public monotonic: boolean,
-    private _current: number = 0,
+    private _current = 0,
     public reset = false
   ) {}
 

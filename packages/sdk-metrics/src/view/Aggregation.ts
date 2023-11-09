@@ -154,7 +154,7 @@ export class ExplicitBucketHistogramAggregation extends Aggregation {
 
 export class ExponentialHistogramAggregation extends Aggregation {
   constructor(
-    private readonly _maxSize: number = 160,
+    private readonly _maxSize = 160,
     private readonly _recordMinMax = true
   ) {
     super();

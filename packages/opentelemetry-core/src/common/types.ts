@@ -16,6 +16,8 @@
 
 import { Exception } from '@opentelemetry/api';
 
+export type FunctionType = () => void;
+
 /**
  * This interface defines a fallback to read a timeOrigin when it is not available on performance.timeOrigin,
  * this happens for example on Safari Mac
@@ -31,12 +33,12 @@ export interface TimeOriginLegacy {
  * This interface defines the params that are be added to the wrapped function
  * using the "shimmer.wrap"
  */
-export interface ShimWrapped extends Function {
+export interface ShimWrapped extends FunctionType {
   __wrapped: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  __unwrap: Function;
+  __unwrap: FunctionType;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  __original: Function;
+  __original: FunctionType;
 }
 
 /**

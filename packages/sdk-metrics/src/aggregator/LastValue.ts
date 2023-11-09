@@ -34,7 +34,7 @@ import { AggregationTemporality } from '../export/AggregationTemporality';
 export class LastValueAccumulation implements Accumulation {
   constructor(
     public startTime: HrTime,
-    private _current: number = 0,
+    private _current = 0,
     public sampleTime: HrTime = [0, 0]
   ) {}
 

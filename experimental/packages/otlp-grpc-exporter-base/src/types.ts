@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as grpc from '@grpc/grpc-js';
 import {
   CompressionAlgorithm,

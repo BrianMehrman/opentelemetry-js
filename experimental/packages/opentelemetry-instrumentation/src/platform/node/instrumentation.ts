@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as types from '../../types';
 import * as path from 'path';
 import { types as utilTypes } from 'util';
